@@ -47,7 +47,7 @@ typedef enum {
 
 @interface AltBeacon : NSObject
 
-- (id)initWithIdentifier:(NSString *)theIdentifier;
+- (id)initWithIdentifier:(NSData *)theIdentifier;
 
 - (void)addDelegate:(id<AltBeaconDelegate>)delegate;
 - (void)removeDelegate:(id<AltBeaconDelegate>)delegate;

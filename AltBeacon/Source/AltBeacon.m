@@ -185,9 +185,12 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
                                                  encoding:NSUTF8StringEncoding];
 
 
-        @synchronized (self) {
-            [peripheralUUIDSMatching setObject:newStr forKey:[peripheral.identifier UUIDString]];
-            [peripheralsToBeValidated removeObject:peripheral];
+        if(newStr != nil)
+        {
+            @synchronized (self) {
+                [peripheralUUIDSMatching setObject:newStr forKey:[peripheral.identifier UUIDString]];
+                [peripheralsToBeValidated removeObject:peripheral];
+            }
         }
         [centralManager cancelPeripheralConnection:peripheral];
 
