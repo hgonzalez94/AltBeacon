@@ -52,7 +52,7 @@
 @end
 
 @implementation AltBeacon {
-    NSString *identifier;
+    NSData *identifier;
 
     CBCentralManager *centralManager;
     CBPeripheralManager *peripheralManager;
@@ -74,7 +74,7 @@
 }
 
 
-- (id)initWithIdentifier:(NSString *)theIdentifier {
+- (id)initWithIdentifier:(NSData *)theIdentifier {
     if ((self = [super init])) {
         identifier = theIdentifier;
 
@@ -314,13 +314,11 @@ didDiscoverCharacteristicsForService:(CBService *)service
             [CBUUID UUIDWithString:ALT_BEACON_CHARACTERISTIC];
 
     CBMutableService *service = [[CBMutableService alloc] initWithType:altBeaconServiceUUID primary:YES];
-    NSString *strUUID = identifier;
-    NSData *dataUUID = [strUUID dataUsingEncoding:NSUTF8StringEncoding];
 
     characteristic =
             [[CBMutableCharacteristic alloc] initWithType:altBeaconCharacteristicUUID
                                                properties:CBCharacteristicPropertyRead
-                                                    value:dataUUID permissions:CBAttributePermissionsReadable];
+                                                    value:identifier permissions:CBAttributePermissionsReadable];
     service.characteristics = @[characteristic];
     [peripheralManager addService:service];
     [peripheralManager startAdvertising:advertisingData];
