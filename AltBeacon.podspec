@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = https://github.com/hgonzalez94/AltBeacon/"
 
-  #s.license      = "MIT (example)"
+  
   s.license      = { :type => "MIT", :file => "LICENSE" }
   
   s.author             = { "Martin Palatnik" => "marpal@gmail.com" }
