@@ -23,7 +23,3 @@
 #import "NSFileManager+Ext.h"
 
 #import "NSObject+Ext.h"
-
-#import "UIScreen+Ext.h"
-#import "UIView+Ext.h"
-#import "UIImage+Ext.h"
