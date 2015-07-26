@@ -24,7 +24,6 @@
 
 #import "NSObject+Ext.h"
 
-#import "UIColor+Ext.h"
 #import "UIScreen+Ext.h"
 #import "UIView+Ext.h"
 #import "UIImage+Ext.h"
