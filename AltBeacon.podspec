@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Martin Palatnik" => "marpal@gmail.com" }
   s.platform     = :ios, "6.0"
-  s.source       = { :git => "https://github.com/hgonzalez94/AltBeacon.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/hgonzalez94/AltBeacon.git", :tag => head }
   s.source_files  = "AltBeacon/Source/**/*.{h,m}"
   s.requires_arc = true
 
