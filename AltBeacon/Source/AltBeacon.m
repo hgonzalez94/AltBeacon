@@ -299,6 +299,9 @@ didDiscoverCharacteristicsForService:(CBService *)service
                                      withResult:CBATTErrorInvalidOffset];
             return;
         }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Hottie" object:nil userInfo:@{@"user":request.value}];
+        
         request.value = [characteristic.value
                 subdataWithRange:NSMakeRange(request.offset,
                         characteristic.value.length - request.offset)];
